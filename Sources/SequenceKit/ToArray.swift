@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Sequence {
+public extension Sequence {
   func toArray() -> [Element] {
     return Array(self)
   }

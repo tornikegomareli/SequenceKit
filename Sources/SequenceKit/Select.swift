@@ -8,26 +8,26 @@
 import Foundation
 
 public extension Sequence {
-  func select<TSource>(_ transform: @escaping (Element) -> TSource) -> MapSequence<Self, TSource> {
+  func select<T>(_ transform: @escaping (Element) -> T) -> MapSequence<Self, T> {
     return MapSequence(base: self, transform: transform)
   }
 }
 
-public struct MapSequence<Base: Sequence, TSource>: Sequence {
-  public typealias Element = TSource
+public struct MapSequence<Base: Sequence, T>: Sequence {
+  public typealias Element = T
   
   let base: Base
-  let transform: (Base.Element) -> TSource
+  let transform: (Base.Element) -> T
   
   public func makeIterator() -> Iterator {
     return Iterator(base: base.makeIterator(), transform: transform)
   }
   
   public struct Iterator: IteratorProtocol {
-    public typealias Element = TSource
+    public typealias Element = T
     
     var base: Base.Iterator
-    let transform: (Base.Element) -> TSource
+    let transform: (Base.Element) -> T
     
     public mutating func next() -> Element? {
       guard let element = base.next() else {

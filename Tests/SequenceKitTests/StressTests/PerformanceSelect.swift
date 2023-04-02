@@ -9,7 +9,7 @@ import Foundation
 import XCTest
 @testable import SequenceKit
 
-class StressPerformanceTests: XCTestCase {
+class StressPerformanceTestsForSelect: XCTestCase {
   func testSelectPerformance() {
     let array = Array(0..<1000000)
     measure {

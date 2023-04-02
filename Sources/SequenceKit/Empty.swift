@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 func GetEmptySequence<TSource>() -> EmptySequence<[TSource]> {
   return EmptySequence.instance
 }

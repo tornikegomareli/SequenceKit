@@ -19,7 +19,7 @@ class AnyAllTests: XCTestCase {
   override func tearDownWithError() throws {
     numbers = nil
   }
-  
+
   func testAny() {
     XCTAssertTrue(numbers.any(), "any() should return true when the sequence is not empty")
     

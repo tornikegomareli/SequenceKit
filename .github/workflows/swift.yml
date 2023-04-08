@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
 
     steps:
     - name: Checkout code
@@ -21,6 +21,7 @@ jobs:
       uses: swift-actions/setup-swift@v1
       with:
         swift-version: 5.8
+        platform: macOS
 
     - name: Build
       run: swift build

@@ -1,3 +1,3 @@
 # SequenceKit
 
-A description of this package.
+LINQ like library for Swift
